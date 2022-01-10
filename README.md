@@ -1,5 +1,5 @@
 # ETF Comparison
-It is a simple ETF comparison app which compares VT, SPY, and 0050.TW ETFs and helps you figure out which one could generate greater returns in a specific time period. Check this out on the [demo page][1].
+It is a simple ETF comparison app which compares [VT][vt], [SPY][spy], and [0050.TW][0050.tw] ETFs and helps you figure out which one could generate greater returns in a specific time period. Check this out on the [demo page][demo].
 
 ![Screenshot of ETF Comparison](etf-comparison.png)
 
@@ -9,7 +9,10 @@ It is a simple ETF comparison app which compares VT, SPY, and 0050.TW ETFs and h
 3. Go to the `http://localhost:8501` URL on your browser to use the app.
 
 ## License
-Streamlit is completely free and open-source and licensed under the [MIT][2] license.
+Streamlit is completely free and open-source and licensed under the [MIT][license] license.
 
-[1]: https://share.streamlit.io/evanxd/etf-comparison/main/etf-comparison.py
-[2]: LICENSE
+[license]: LICENSE
+[demo]: https://share.streamlit.io/evanxd/etf-comparison/main/etf-comparison.py
+[vt]: https://finance.yahoo.com/quote/vt/
+[spy]: https://finance.yahoo.com/quote/spy/
+[0050.tw]: https://finance.yahoo.com/quote/0050.TW/
