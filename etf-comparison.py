@@ -3,6 +3,10 @@ import streamlit as st
 
 import utils
 
+st.write("""
+# ETF Comparison
+""")
+
 today = date.today()
 start_date = st.date_input("Start Date", today.replace(year=today.year - 10))
 end_date = st.date_input("End Date", today)
