@@ -4,7 +4,7 @@ import streamlit as st
 
 import utils
 
-TICKERS = { "Global": "VT", "US": "SPY", "TW": "0050.TW" }
+TICKERS = { "Global": "VT", "US": "SPY", "TW": "0050.TW", "JP": "EWJ", "KR": "EWY" }
 tickers = [TICKERS[t] for t in TICKERS]
 
 st.write("""
@@ -18,8 +18,13 @@ end_date = st.date_input("End Date", today)
 data = utils.download(tickers, start=start_date, end=end_date)
 utils.normalize(data)
 
-result = utils.merge(data)[["Close", "Close_1", "Close_2"]]
-result.rename({"Close": tickers[0], "Close_1": tickers[1], "Close_2": tickers[2]}, axis=1, inplace=True)
+names = ["Close", "Close_1", "Close_2", "Close_3", "Close_4"]
+result = utils.merge(data)[names]
+
+new_names = {}
+for i, name in enumerate(names):
+    new_names[name] = tickers[i]
+result.rename(new_names, axis=1, inplace=True)
 
 selected_tickers = []
 for market in TICKERS:
