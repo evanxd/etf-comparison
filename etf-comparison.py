@@ -4,7 +4,7 @@ import streamlit as st
 
 import utils
 
-TICKERS = { "Global": "VT", "US": "SPY", "TW": "0050.TW", "JP": "EWJ", "KR": "EWY" }
+TICKERS = {"Global": "VT", "Japan": "EWJ", "Korea": "EWY", "Taiwan": "0050.TW", "United States": "SPY"}
 tickers = [TICKERS[t] for t in TICKERS]
 
 st.write("""
