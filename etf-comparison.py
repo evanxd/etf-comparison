@@ -22,15 +22,15 @@ names = ["Close", "Close_1", "Close_2", "Close_3", "Close_4"]
 result = utils.merge(data)[names]
 
 new_names = {}
-for i, name in enumerate(names):
-    new_names[name] = tickers[i]
+for i, market in enumerate(TICKERS):
+    new_names[names[i]] = market
 result.rename(new_names, axis=1, inplace=True)
 
-selected_tickers = []
+selected_markets = []
 for market in TICKERS:
     checked = st.checkbox("{market} ({ticker})".format(market=market, ticker=TICKERS[market]), value=True)
     if checked:
-        selected_tickers.append(TICKERS[market])
+        selected_markets.append(market)
 
-if len(selected_tickers) > 0:
-    st.line_chart(result[selected_tickers])
+if len(selected_markets) > 0:
+    st.line_chart(result[selected_markets])
