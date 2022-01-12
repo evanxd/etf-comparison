@@ -1,5 +1,6 @@
 {
     "Global (VT)": "VT",
+    "Canada (EWC)": "EWC",
     "France (EWQ)": "EWQ",
     "Germany (EWG)": "EWG",
     "Hong Kong (EWH)": "EWH",
@@ -7,6 +8,7 @@
     "Japan (EWJ)": "EWJ",
     "Korea (EWY)": "EWY",
     "People's Republic of China (MCHI)": "MCHI",
+    "Russia (ERUS)": "ERUS",
     "Singapore (EWS)": "EWS",
     "Taiwan (0050.TW)": "0050.TW",
     "United Kingdom (EWU)": "EWU",
