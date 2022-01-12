@@ -1,10 +1,10 @@
 from datetime import date
-import re
+import json
 import streamlit as st
 
 import utils
 
-TICKERS = {"Global (VT)": "VT", "Japan (EWJ)": "EWJ", "Korea (EWY)": "EWY", "Taiwan (0050.TW)": "0050.TW", "United States (SPY)": "SPY"}
+TICKERS = json.load(open("tickers.json"))
 tickers = [TICKERS[t] for t in TICKERS]
 
 st.write("""
