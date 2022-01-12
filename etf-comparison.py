@@ -18,7 +18,10 @@ end_date = st.date_input("End Date", today)
 data = utils.download(tickers, start=start_date, end=end_date)
 utils.normalize(data)
 
-names = ["Close", "Close_1", "Close_2", "Close_3", "Close_4"]
+names = ["Close_{i}".format(i=i) for i in range(len(data))]
+# Workaround: The name of the first Close column is not with "_0" suffix
+# when the length of ticker list is odd.
+names[0] = "Close" if len(data) % 2 != 0 else names[0]
 result = utils.merge(data)[names]
 
 new_names = {}
