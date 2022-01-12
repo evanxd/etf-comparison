@@ -1,5 +1,6 @@
 from datetime import date
 import json
+import random
 import streamlit as st
 
 import utils
@@ -30,7 +31,9 @@ for i, market in enumerate(TICKERS):
 result.rename(new_names, axis=1, inplace=True)
 
 markets = [market for market in TICKERS]
-selected_markets = st.multiselect('Pick ETFs', markets, markets)
+default_selected_markets = [markets[0]]
+default_selected_markets.extend(random.sample(markets[1:], 2))
+selected_markets = st.multiselect('Pick ETFs', markets, default_selected_markets)
 
 if len(selected_markets) > 0:
     st.line_chart(result[selected_markets])
