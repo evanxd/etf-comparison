@@ -1,7 +1,10 @@
 {
     "Global (VT)": "VT",
+    "Hong Kong (EWH)": "EWH",
     "Japan (EWJ)": "EWJ",
     "Korea (EWY)": "EWY",
+    "People's Republic of China": "MCHI",
+    "Singapore (EWS)": "EWS",
     "Taiwan (0050.TW)": "0050.TW",
     "United States (SPY)": "SPY"
 }
