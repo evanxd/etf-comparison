@@ -31,9 +31,11 @@ for i, market in enumerate(TICKERS):
 result.rename(new_names, axis=1, inplace=True)
 
 markets = [market for market in TICKERS]
-default_selected_markets = [markets[0]]
-default_selected_markets.extend(random.sample(markets[1:], 2))
-selected_markets = st.multiselect('Pick ETFs', markets, default_selected_markets)
+if "default_selected_markets" not in st.session_state:
+    default_selected_markets = [markets[0]]
+    default_selected_markets.extend(random.sample(markets[1:], 2))
+    st.session_state["default_selected_markets"] = default_selected_markets
+selected_markets = st.multiselect('Pick ETFs', markets, st.session_state["default_selected_markets"])
 
 if len(selected_markets) > 0:
     st.line_chart(result[selected_markets])
