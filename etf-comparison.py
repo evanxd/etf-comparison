@@ -32,9 +32,9 @@ result.rename(new_names, axis=1, inplace=True)
 
 markets = [market for market in TICKERS]
 container = st.container()
-select_all = st.checkbox("Pick All")
+all = st.checkbox("Pick All")
 
-if select_all:
+if all:
     selected_markets = container.multiselect('Pick ETFs', markets, markets)
 elif "default_selected_markets" not in st.session_state:
     default_selected_markets = [markets[0]]
