@@ -15,9 +15,6 @@ today = date.today()
 start_date = st.date_input("Start Date", today.replace(year=today.year - 10))
 end_date = st.date_input("End Date", today)
 
-data = utils.download(tickers, start=start_date, end=end_date)
-utils.normalize(data)
-
 container = st.container()
 all = st.checkbox("Pick All")
 
@@ -36,6 +33,9 @@ else:
         'Pick ETFs', markets, st.session_state["default_selected_markets"]
     )
 
+data = utils.download(tickers, start=start_date, end=end_date)
+utils.normalize(data)
 result = utils.merge(data)
+
 if len(selected_markets) > 0:
     st.line_chart(result[selected_markets])
