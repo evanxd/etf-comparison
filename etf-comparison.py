@@ -34,15 +34,15 @@ markets = [market for market in TICKERS]
 container = st.container()
 all = st.checkbox("Pick All")
 
-if all:
-    selected_markets = container.multiselect('Pick ETFs', markets, markets)
-elif "default_selected_markets" not in st.session_state:
+if "default_selected_markets" not in st.session_state:
     default_selected_markets = [markets[0]]
     default_selected_markets.extend(random.sample(markets[1:], 2))
     st.session_state["default_selected_markets"] = default_selected_markets
     selected_markets = container.multiselect(
         'Pick ETFs', markets, default_selected_markets
     )
+elif all:
+    selected_markets = container.multiselect('Pick ETFs', markets, markets)
 else:
     selected_markets = container.multiselect(
         'Pick ETFs', markets, st.session_state["default_selected_markets"]
